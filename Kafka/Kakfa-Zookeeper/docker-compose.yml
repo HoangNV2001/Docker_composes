@@ -12,14 +12,15 @@ services:
     environment:
       ZOOKEEPER_CLIENT_PORT: 2181
       ZOOKEEPER_SERVER_ID: 1
-      ZOOKEEPER_SERVER: zoo1:2888:3888;
+      ZOOKEEPER_SERVER: zoo1:2888:3888
     extra_hosts:
       - "kafka-broker-1:192.168.2.164"
       - "zoo1:192.168.2.164"
     volumes:
       - /data/kafka/zookeeper/zoo1_data:/var/lib/zookeeper/data
       - /data/kafka/zookeeper/zoo1_log:/var/lib/zookeeper/log
-  kafka-broker-2:
+
+  kafka-broker-1:
     image: confluentinc/cp-kafka:7.4.0
     hostname: kafka-broker-1
     restart: unless-stopped
@@ -43,4 +44,4 @@ services:
       - zoo1
     volumes:
       - /data/kafka/kafka_broker_1_data:/var/lib/kafka/data
-# volumes:
+volumes:

@@ -7,7 +7,7 @@ services:
     restart: unless-stopped
     container_name: zoo1
     ports:
-      - "127.0.0.1:2181:2181"
+      - "2181:2181"
       # - "127.0.0.1:2888:2888"
       # - "127.0.0.1:3888:3888"
     environment:

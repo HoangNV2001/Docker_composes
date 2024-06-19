@@ -3,6 +3,7 @@ services:
   zoo1:
     image: confluentinc/cp-zookeeper:7.4.0
     hostname: zoo1
+    user: root
     restart: unless-stopped
     container_name: zoo1
     ports:
@@ -23,6 +24,7 @@ services:
   kafka-broker-1:
     image: confluentinc/cp-kafka:7.4.0
     hostname: kafka-broker-1
+    user: root
     restart: unless-stopped
     container_name: kafka-broker-1
     ports:

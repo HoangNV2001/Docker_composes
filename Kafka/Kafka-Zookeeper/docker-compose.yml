@@ -44,4 +44,4 @@ services:
       - zoo1
     volumes:
       - /data/kafka/kafka_broker_1_data:/var/lib/kafka/data
-volumes:
+#volumes:

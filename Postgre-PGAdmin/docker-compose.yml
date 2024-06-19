@@ -6,12 +6,17 @@ services:
   postgres:
     container_name: postgres_container
     image: postgres
+    command: -c config_file=/etc/postgresql.conf
     environment:
       POSTGRES_USER: its
       POSTGRES_PASSWORD: its@DASC@2024
       PGDATA: /data/postgres
     volumes:
+       - ./postgresql.conf:/etc/postgresql.conf
        - /data/postgres:/data/postgres
+       - /data/postgres/logs:/logs
+       - /etc/passwd:/etc/passwd:ro
+       - /etc/group:/etc/group:ro
     ports:
       - "5432:5432"
     networks:

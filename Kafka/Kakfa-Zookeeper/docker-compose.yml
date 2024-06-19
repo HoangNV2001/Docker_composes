@@ -6,27 +6,27 @@ services:
     restart: unless-stopped
     container_name: zoo1
     ports:
-    - "192.168.2.164:2181:2181"
-    - "192.168.2.164:2888:2888"
-    - "192.168.2.164:3888:3888"
+      - "192.168.2.164:2181:2181"
+      - "192.168.2.164:2888:2888"
+      - "192.168.2.164:3888:3888"
     environment:
       ZOOKEEPER_CLIENT_PORT: 2181
       ZOOKEEPER_SERVER_ID: 1
       ZOOKEEPER_SERVER: zoo1:2888:3888;
     extra_hosts:
-    - "kafka-broker-1:192.168.2.164"
-    - "zoo1:192.168.2.164"
+      - "kafka-broker-1:192.168.2.164"
+      - "zoo1:192.168.2.164"
     volumes:
-    - /data/kafka/zookeeper/zoo1_data:/var/lib/zookeeper/data
-    - /data/kafka/zookeeper/zoo1_log:/var/lib/zookeeper/log
+      - /data/kafka/zookeeper/zoo1_data:/var/lib/zookeeper/data
+      - /data/kafka/zookeeper/zoo1_log:/var/lib/zookeeper/log
   kafka-broker-2:
     image: confluentinc/cp-kafka:7.4.0
     hostname: kafka-broker-1
     restart: unless-stopped
     container_name: kafka-broker-1
     ports:
-    - "192.168.2.164:9092:9092"
-    - "10.129.1.121:29092:29092"
+      - "192.168.2.164:9092:9092"
+      - "10.129.1.121:29092:29092"
     environment:
       KAFKA_ADVERTISED_LISTENERS: INTERNAL://192.168.2.164:9092,EXTERNAL://10.129.1.121:29092
       KAFKA_LISTENER_SECURITY_PROTOCAL_MAP: INTERNAL:PLAINTEXT,EXTERNAL:PLAINTEXT

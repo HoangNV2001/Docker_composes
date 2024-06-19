@@ -41,7 +41,7 @@ services:
       KAFKA_JMX_HOSTNAME: localhost
     extra_hosts:
       - "kafka-broker-1:127.0.0.1"
-      - "zoo1:192.168.2.164"
+      - "zoo1:127.0.0.1"
     depends_on:
       - zoo1
     volumes:

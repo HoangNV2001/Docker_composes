@@ -23,7 +23,7 @@ services:
     image: confluentinc/cp-kafka:7.4.0
     hostname: kafka-broker-1
     restart: unless-stopped
-    container-name: kafka-broker-1
+    container_name: kafka-broker-1
     ports:
     - "192.168.2.164:9092:9092"
     - "10.129.1.121:29092:29092"

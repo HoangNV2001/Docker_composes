@@ -2,6 +2,7 @@ version: '3.7'
 services:
   zoo1:
     image: confluentinc/cp-zookeeper:7.4.0
+    user: root
     hostname: zoo1
     restart: unless-stopped
     container_name: zoo1

@@ -7,7 +7,7 @@ services:
       - "9092:9092"
       - "9094:9094"
     volumes:
-      - "kafka_data:/bitnami"
+      - "/data/kafka:/bitnami"
     environment:
       - KAFKA_ENABLE_KRAFT=yes
       # - KAFKA_KRAFT_CLUSTER_ID=228f04bc-0895-11ee-be56-0242ac120002
@@ -64,6 +64,3 @@ services:
       SCHEMA_REGISTRY_HOST_NAME: schema-registry
       SCHEMA_REGISTRY_KAFKASTORE_BOOTSTRAP_SERVERS: PLAINTEXT://10.129.1.121:9094,PLAINTEXT_INTERNAL://localhost:29092
      # SCHEMA_REGISTRY_DEBUG: 'true'
-volumes:
-  kafka_data:
-    driver: /data/kafka

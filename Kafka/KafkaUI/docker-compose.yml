@@ -38,7 +38,9 @@ services:
 
       # LOGGING_LEVEL_ROOT: 'DEBUG'
     volumes:
-      - ./config.yml:/etc/kafkaui/dynamic_config.yaml
+      - type: bind
+        source: ./config.yml
+        target: /etc/kafkaui/dynamic_config.yaml
 
   rest-proxy:
     image: confluentinc/cp-kafka-rest:6.0.0

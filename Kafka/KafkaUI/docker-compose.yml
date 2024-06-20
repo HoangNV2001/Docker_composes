@@ -34,8 +34,8 @@ services:
     environment:
       DYNAMIC_CONFIG_ENABLED: 'true'
       # LOGGING_LEVEL_ROOT: 'DEBUG'
-    volumes:
-      - /c/tools/kafka/kui/config.yml:/etc/kafkaui/dynamic_config.yaml
+    # volumes:
+    #   - /c/tools/kafka/kui/config.yml:/etc/kafkaui/dynamic_config.yaml
 
   rest-proxy:
     image: confluentinc/cp-kafka-rest:6.0.0
@@ -63,4 +63,4 @@ services:
      # SCHEMA_REGISTRY_DEBUG: 'true'
 volumes:
   kafka_data:
-    driver: local
+    driver: /data/kafka

@@ -6,8 +6,8 @@ services:
     ports:
       - "9092:9092"
       - "9094:9094"
-    volumes:
-      - "/data/kafka:/bitnami/kafka"
+    # volumes:
+    #   - "/data/kafka:/bitnami/kafka"
     environment:
       - KAFKA_ENABLE_KRAFT=yes
       # - KAFKA_KRAFT_CLUSTER_ID=228f04bc-0895-11ee-be56-0242ac120002

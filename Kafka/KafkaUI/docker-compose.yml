@@ -6,8 +6,6 @@ services:
     image: provectuslabs/kafka-ui:latest
     ports:
       - 8080:8080
-    depends_on:
-      - kafka
     environment:
       KAFKA_CLUSTERS_0_NAME: local
       KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: 10.129.1.121:9092

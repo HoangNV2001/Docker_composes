@@ -33,9 +33,12 @@ services:
       - 8080:8080
     environment:
       DYNAMIC_CONFIG_ENABLED: 'true'
+      SPRING_SECURITY_USER_NAME: 'its'
+      SPRING_SECURITY_USER_PASSWORD: 'its@DASC@2024'
+
       # LOGGING_LEVEL_ROOT: 'DEBUG'
-    # volumes:
-    #   - /c/tools/kafka/kui/config.yml:/etc/kafkaui/dynamic_config.yaml
+    volumes:
+      - ./config.yml:/etc/kafkaui/dynamic_config.yaml
 
   rest-proxy:
     image: confluentinc/cp-kafka-rest:6.0.0

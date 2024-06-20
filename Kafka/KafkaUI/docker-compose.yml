@@ -37,10 +37,8 @@ services:
       SPRING_SECURITY_USER_PASSWORD: 'its@DASC@2024'
 
       # LOGGING_LEVEL_ROOT: 'DEBUG'
-    volumes:
-      - type: bind
-        source: ./config.yml
-        target: /etc/kafkaui/dynamic_config.yaml
+    # volumes:
+    #   - ./config.yml:/etc/kafkaui/dynamic_config.yaml
 
   rest-proxy:
     image: confluentinc/cp-kafka-rest:6.0.0
